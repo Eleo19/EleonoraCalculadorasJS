@@ -1,29 +1,52 @@
-// const numero1 = parseInt(prompt('Ingresa un numero')) 
-// const numero2 = parseInt(prompt('ingresa otro numero'))
-// const operacion = prompt('que operacion queres hacer? sum-rest-mult-div')
-// let resultado
-// if (operacion == 'sum') {
-//     resultado = numero1+numero2
-// } else if(operacion == 'rest') {
-//     resultado = numero1-numero2
-// } 
-// else if (operacion == 'mult'){
-//     resultado = numero1*numero2
-// } else if (operacion == 'div') {
-//     resultado = numero1/numero2
-// } else {
-//     resultado = 'error'
-// }
-// alert ('el resultado es '+resultado)
-function solucionDialisis (){
-let peso = parseInt(prompt('Ingresar peso de paciente en Kg'))
-let hematocrito = parseInt(prompt('Ingresar valor de hematocrito en %'))
-let resultado1 = parseInt(peso*70*(1-(hematocrito/100)*1,2))
-let resultado2= parseInt(5*resultado1/100/10*50)
-alert ('volumen total a infundir de solucion de albúmina en solucion fisiológica al 5% '+ resultado1 + 'el volumen de albumina a utilizar es '+ resultado2)
-}
-let volverCalcular= parseInt(prompt ('volver a calcular? 1.si - 2.no'))
+let nombre= prompt('ingresa tu nombre y apellido')
+let email= prompt ('ingresa tu email')
+let profesion= prompt('ingresa tu profesion')
+alert('Bienvenido a la calculadora '+nombre)
+alert('comencemos a calcular!')
 
-while(volverCalcular === 2){
-    solucionDialisis ()
-} 
+let peso = parseInt(prompt('ingrese peso del paciente en Kg'))
+let hemato = parseInt(prompt('ingrese hematocrito'))
+let resultado1 = (((peso*70)*(1-(hemato/100)))*1.2)
+let resultado2 = (((5*(((peso*70)*(1-(hemato/100)))*1.2)/100)/10)*50)
+alert('cantidad de volumen a preparar '+ resultado1)
+alert('volumen de albumina a utilizar '+ resultado2)
+let volverCalcular = prompt('volver a calcular?')
+
+while(volverCalcular === 'si'){
+    peso = parseInt(prompt('ingrese peso'))
+    hemato = parseInt(prompt('ingrese hematocrito'))
+    resultado1 = (((peso*70)*(1-(hemato/100)))*1.2)
+    resultado2= (((5*(((peso*70)*(1-(hemato/100)))*1.2)/100)/10)*50)
+    alert('cantidad de volumen a preparar '+ resultado1)
+    alert('volumen de albumina a utilizar '+ resultado2)
+    volverCalcular = prompt('volver a calcular?')
+}
+
+alert('gracias por utilizar nuestra herramienta')
+
+//opcion con funciones
+// let peso = parseInt(prompt('ingrese peso del paciente en Kg'))
+// let hemato = parseInt(prompt('ingrese hematocrito'))
+// function volumen (p1,p2){
+//     let resultado1= (((p1*70)*(1-(p2/100)))*1.2)
+//  }
+//  function albumina (p1,p2){
+//    let resultado2=(((5*(((p1*70)*(1-(p2/100)))*1.2)/100)/10)*50)
+//  }
+//  resultado1= volumen(peso,hemato)
+//  resultado2=albumina(peso,hemato)
+//  alert('cantidad de volumen a preparar '+ resultado1)
+// alert('volumen de albumina a utilizar '+ resultado2)
+// let volverCalcular = prompt('volver a calcular?')
+
+// while(volverCalcular === 'si'){
+//     peso = parseInt(prompt('ingrese peso'))
+//     hemato = parseInt(prompt('ingrese hematocrito'))
+//     volumen(peso,hemato)
+//      albumina(peso,hemato)
+//     alert('cantidad de volumen a preparar '+ resultado1)
+//     alert('volumen de albumina a utilizar '+ resultado2)
+//     volverCalcular = prompt('volver a calcular?')
+// }
+
+// alert('gracias por utilizar nuestra herramienta')
